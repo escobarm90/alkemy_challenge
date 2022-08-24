@@ -1,10 +1,11 @@
-package dto;
+package entity;
+
+import dto.Pelicula_serieDTO;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class GeneroDTO {
-
+public class GeneroEntity {
     private String nombre;
     private String imagen;
     private List<Pelicula_serieDTO> personajes_asociados = new ArrayList<Pelicula_serieDTO>();
@@ -35,7 +36,7 @@ public class GeneroDTO {
 
     @Override
     public String toString() {
-        return "GeneroDTO{" +
+        return "Genero{" +
                 "nombre='" + nombre + '\'' +
                 ", imagen='" + imagen + '\'' +
                 ", personajes_asociados=" + personajes_asociados +

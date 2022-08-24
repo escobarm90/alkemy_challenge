@@ -1,10 +1,12 @@
-package dto;
+package entity;
+
+import dto.PersonajeDTO;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Pelicula_serieDTO {
+public class Pelulcula_serieEntity {
     private String imagen;
     private String titulo;
     private Date fecha_creacion;
@@ -53,7 +55,7 @@ public class Pelicula_serieDTO {
 
     @Override
     public String toString() {
-        return "Pelicula_serieDTO{" +
+        return "Pelulcula_serie{" +
                 "imagen='" + imagen + '\'' +
                 ", titulo='" + titulo + '\'' +
                 ", fecha_creacion=" + fecha_creacion +

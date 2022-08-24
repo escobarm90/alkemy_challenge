@@ -1,9 +1,11 @@
-package dto;
+package entity;
+
+import dto.Pelicula_serieDTO;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class PersonajeDTO {
+public class PersonajeEntity {
     private String imagen;
     private String nombre;
     private int edad;
@@ -61,7 +63,7 @@ public class PersonajeDTO {
 
     @Override
     public String toString() {
-        return "PersonajeDTO{" +
+        return "PersonajeEntity{" +
                 "imagen='" + imagen + '\'' +
                 ", nombre='" + nombre + '\'' +
                 ", edad=" + edad +
