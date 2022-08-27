@@ -1,24 +1,22 @@
 package entity;
 
-import dto.Pelicula_serieDTO;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Date;
 
 @Data
 @Entity
-@Table(name = "genero")
-public class GeneroEntity {
+@Table(name = "pelicula")
+public class Pelicula_serieEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
-    private String nombre;
     private String imagen;
-
+    private String titulo;
+    private Date fecha_creacion;
+    private Integer calificacion;
 
 }

@@ -1,22 +1,31 @@
 package mapper;
 
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import dto.GeneroDTO;
 import entity.GeneroEntity;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class GeneroMapper {
+    private ObjectMapper objectMapper;//Objeto de la clase genero mapper
 
-    public GeneroMapper(){
-        System.out.println("Constructor Genero Mapper");
+
+
+    @Autowired
+    public GeneroMapper(ObjectMapper objectMapper){ //objeto que nos provee springboot a traves de la inyeccion de dependencia a traves de autowired
+        this.objectMapper = objectMapper;
+
     };
 
+
     public GeneroEntity toEntity(GeneroDTO generoDTO){
-        GeneroEntity generoEntity = new GeneroEntity();
+        return objectMapper.convertValue(generoDTO, GeneroEntity.class);
+    }
+    /*   GeneroEntity generoEntity = new GeneroEntity();
         generoEntity.setImagen(generoEntity.getNombre());
         generoEntity.setNombre(generoDTO.getNombre());
-        generoEntity.setPersonajes_asociados(generoDTO.getPersonajes_asociados());
         return generoEntity;
-    }
+    }*/
 }
