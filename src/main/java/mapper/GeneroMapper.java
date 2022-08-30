@@ -7,7 +7,7 @@ import entity.GeneroEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component
+@Component //Todas las anotaciones derivan de component
 public class GeneroMapper {
     private ObjectMapper objectMapper;//Objeto de la clase genero mapper
 
