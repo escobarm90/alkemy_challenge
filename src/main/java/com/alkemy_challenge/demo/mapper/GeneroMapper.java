@@ -1,9 +1,10 @@
 package com.alkemy_challenge.demo.mapper;
 
 
+import com.alkemy_challenge.demo.dto.GeneroDTO;
 import com.alkemy_challenge.demo.entity.GeneroEntity;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import dto.GeneroDTO;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
