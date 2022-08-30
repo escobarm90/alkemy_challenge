@@ -1,4 +1,4 @@
-package entity;
+package com.alkemy_challenge.demo.entity;
 
 import dto.Pelicula_serieDTO;
 import lombok.Data;

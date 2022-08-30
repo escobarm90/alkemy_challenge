@@ -1,4 +1,4 @@
-package entity;
+package com.alkemy_challenge.demo.entity;
 
 import lombok.Data;
 

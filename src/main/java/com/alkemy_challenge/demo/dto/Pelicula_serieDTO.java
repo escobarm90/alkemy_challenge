@@ -1,4 +1,4 @@
-package dto;
+package com.alkemy_challenge.demo.dto;
 
 import lombok.Data;
 
