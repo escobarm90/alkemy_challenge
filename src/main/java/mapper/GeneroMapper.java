@@ -9,7 +9,8 @@ import org.springframework.stereotype.Component;
 
 @Component //Todas las anotaciones derivan de component
 public class GeneroMapper {
-    private ObjectMapper objectMapper;//Objeto de la clase genero mapper
+
+    private ObjectMapper objectMapper; //Objeto de la clase genero mapper
 
 
 
