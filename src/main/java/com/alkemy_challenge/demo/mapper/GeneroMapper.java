@@ -15,6 +15,7 @@ public class GeneroMapper {
 
 
 
+
     @Autowired
     public GeneroMapper(ObjectMapper objectMapper){ //objeto que nos provee springboot a traves de la inyeccion de dependencia a traves de autowired
         this.objectMapper = objectMapper;
