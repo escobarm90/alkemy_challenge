@@ -1,6 +1,7 @@
 package service;
 
-import dto.GeneroDTO;
+import com.alkemy_challenge.demo.dto.GeneroDTO;
+
 
 public interface GeneroServicio {
 
