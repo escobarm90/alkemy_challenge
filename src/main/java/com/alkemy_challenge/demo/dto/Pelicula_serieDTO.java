@@ -8,6 +8,8 @@ import java.util.List;
 
 @Data
 public class Pelicula_serieDTO {
+
+    private Long id;
     private String imagen;
     private String titulo;
     private Date fecha_creacion;

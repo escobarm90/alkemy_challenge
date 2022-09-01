@@ -7,6 +7,8 @@ import java.util.List;
 
 @Data
 public class PersonajeDTO {
+
+    private Long id;
     private String imagen;
     private String nombre;
     private int edad;

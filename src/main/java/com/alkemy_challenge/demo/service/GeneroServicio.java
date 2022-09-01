@@ -1,11 +1,18 @@
-package service;
+
+package com.alkemy_challenge.demo.service;
 
 import com.alkemy_challenge.demo.dto.GeneroDTO;
+
+import java.util.List;
 
 
 public interface GeneroServicio {
 
-    void guardarGenero(GeneroDTO generoDTO);
+    GeneroDTO guardarGenero(GeneroDTO generoDTO);
 
-    void leerdb();
+    List<GeneroDTO> leerBdDTO();
+
+    GeneroDTO actualizarGenero(Long id, GeneroDTO generoDTO);
+
+    void borrarGenero(Long id);
 }

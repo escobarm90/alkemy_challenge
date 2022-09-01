@@ -4,8 +4,7 @@ package com.alkemy_challenge.demo.entity;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+
 
 @Data
 @Entity
@@ -15,8 +14,6 @@ public class GeneroEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-
     private String nombre;
     private String imagen;
 
