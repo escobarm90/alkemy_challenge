@@ -7,8 +7,9 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class PersonajeServiceImpl implements PersonajeServicio {
+
     @Override
-    public void guardarGenero(PersonajeDTO personajeDTO) {
+    public void guardarPersonaje(PersonajeDTO personajeDTO) {
 
     }
 }
