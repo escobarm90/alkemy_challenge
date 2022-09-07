@@ -9,6 +9,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
+import static java.util.stream.Collectors.toList;
+
 @Component
 public class PeliculaMapper {
 
@@ -31,4 +35,21 @@ public class PeliculaMapper {
     public Pelicula_serieDTO toDTO(Pelicula_serieEntity pelicula_serieEntity){
         return objectMapper.convertValue(pelicula_serieEntity, Pelicula_serieDTO.class);
     }
+
+    public List<Pelicula_serieDTO> peliculaDTO(List<Pelicula_serieEntity> peliculaEntity){
+        return peliculaEntity.stream()
+                .map(this::toDTO)
+                .collect(toList());
+    }
+
+    public Pelicula_serieEntity actualizarPelicula(Pelicula_serieEntity peliculaEntity, Pelicula_serieDTO peliculaDTO){
+        peliculaEntity.setId(peliculaDTO.getId());
+        peliculaEntity.setTitulo(peliculaDTO.getTitulo());
+        peliculaEntity.setImagen(peliculaDTO.getImagen());
+        peliculaEntity.setFecha_creacion(peliculaDTO.getFecha_creacion());
+        peliculaEntity.setCalificacion(peliculaDTO.getCalificacion());
+        return peliculaEntity;
+    }
+
+
 }
