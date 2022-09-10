@@ -1,6 +1,5 @@
 package com.alkemy_challenge.demo.service.Impl;
 import com.alkemy_challenge.demo.dto.Pelicula_serieDTO;
-import com.alkemy_challenge.demo.entity.GeneroEntity;
 import com.alkemy_challenge.demo.entity.Pelicula_serieEntity;
 import com.alkemy_challenge.demo.mapper.PeliculaMapper;
 import com.alkemy_challenge.demo.repository.PeliculaRepository;
@@ -31,12 +30,20 @@ public class PeliculaServiceImpl implements PeliculaServicio {
 
     @Override
     public Pelicula_serieDTO actualizarPelicula(Long id, Pelicula_serieDTO peliculaDTO) {
-        return null;
+        Pelicula_serieEntity peliculaEntity = peliculaRepository.findById(id).orElseThrow(
+                () -> new RuntimeException("Not found id:" + id)
+        );
+        Pelicula_serieEntity peliculaEntityActualizado = peliculaMapper.actualizarPelicula(peliculaEntity, peliculaDTO);
+        Pelicula_serieEntity peliculaEntityguardado = peliculaRepository.save(peliculaEntityActualizado);
+        return peliculaMapper.toDTO(peliculaEntityguardado);
     }
 
     @Override
     public void borrarPelicula(Long id) {
-
+        peliculaRepository.findById(id).orElseThrow(
+                () -> new RuntimeException("Not Found Id" +id)
+        );
+        peliculaRepository.deleteById(id);
     }
 
 }
