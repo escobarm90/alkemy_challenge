@@ -9,7 +9,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
+import java.util.*;
 
 import static java.util.stream.Collectors.toList;
 
@@ -29,7 +29,14 @@ public class PersonajeMapper {
     }
 
     public PersonajeDTO toDTO(PersonajeEntity personajeEntity){
-        return objectMapper.convertValue(personajeEntity, PersonajeDTO.class);
+        PersonajeDTO personajeDTO = new PersonajeDTO();
+        personajeDTO.setId(personajeEntity.getId());
+        personajeDTO.setImagen(personajeEntity.getImagen());
+        personajeDTO.setNombre(personajeEntity.getNombre());
+        personajeDTO.setEdad(personajeEntity.getEdad());
+        personajeDTO.setPeso(personajeEntity.getPeso());
+        personajeDTO.setHistoria(personajeEntity.getHistoria());
+        return personajeDTO;
     }
 
     public List<PersonajeDTO> personajeDTO(List<PersonajeEntity> personajeEntity){
@@ -47,5 +54,26 @@ public class PersonajeMapper {
         return personajeEntity;
     }
 
+    public Set<PersonajeEntity> personajeDTOsetEntityList(List<PersonajeDTO> listaPersonaje) {
+        Set<PersonajeEntity> listaPersonajesMapper = new HashSet<>();
+        PersonajeEntity personajeEntity = new PersonajeEntity();
+        for(PersonajeDTO personajeDTO: listaPersonaje){
+            personajeEntity.setImagen(personajeDTO.getImagen());
+            personajeEntity.setNombre(personajeDTO.getNombre());
+            personajeEntity.setEdad(personajeDTO.getEdad());
+            personajeEntity.setPeso(personajeDTO.getPeso());
+            personajeEntity.setHistoria(personajeDTO.getHistoria());
+            listaPersonajesMapper.add(personajeEntity);
+        }
+        return listaPersonajesMapper;
+    }
+
+    public List<PersonajeDTO> personajeEntitySetToDTOList(Collection<PersonajeEntity> entityList){
+        List<PersonajeDTO> listaPersonaje = new ArrayList<>();
+        for(PersonajeEntity entity: entityList){
+         listaPersonaje.add(toDTO(entity));
+        }
+        return listaPersonaje;
+    }
 }
 

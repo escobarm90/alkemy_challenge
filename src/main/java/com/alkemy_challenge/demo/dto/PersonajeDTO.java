@@ -15,4 +15,6 @@ public class PersonajeDTO {
     private int peso;
     private String historia;
 
+    private List<Pelicula_serieDTO> listaPeliculas = new ArrayList<>();
+
 }

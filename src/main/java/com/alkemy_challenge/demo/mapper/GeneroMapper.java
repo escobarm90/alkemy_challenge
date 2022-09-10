@@ -6,10 +6,8 @@ import com.alkemy_challenge.demo.entity.GeneroEntity;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
+
 
 import static java.util.stream.Collectors.toList;
 
@@ -29,11 +27,24 @@ public class GeneroMapper {
 
 
     public GeneroEntity toEntity(GeneroDTO generoDTO){
-        return objectMapper.convertValue(generoDTO, GeneroEntity.class);
+        /*GeneroEntity generoEntity = new GeneroEntity();
+        generoEntity.setId(generoDTO.getId());
+        generoEntity.setImagen(generoDTO.getImagen());
+        generoEntity.setNombre(generoDTO.getNombre());
+        return generoEntity;*/
+        return GeneroEntity.builder()
+                .id(generoDTO.getId())
+                .imagen(generoDTO.getImagen())
+                .nombre(generoDTO.getNombre())
+                .build();
     }
 
     public GeneroDTO toDTO(GeneroEntity generoEntity){
-        return objectMapper.convertValue(generoEntity, GeneroDTO.class);
+        GeneroDTO generoDTO = new GeneroDTO();
+        generoDTO.setId(generoEntity.getId());
+        generoDTO.setImagen(generoEntity.getImagen());
+        generoDTO.setNombre(generoEntity.getNombre());
+        return generoDTO;
     }
 
     public List<GeneroDTO> listaDTO(List<GeneroEntity> generoEntity){

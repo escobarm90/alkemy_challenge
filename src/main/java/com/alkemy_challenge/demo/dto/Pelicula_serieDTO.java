@@ -15,4 +15,7 @@ public class Pelicula_serieDTO {
     private Date fecha_creacion;
     private Integer calificacion;
 
+    private Long generoId;
+    private GeneroDTO generoDTO;
+    private List<PersonajeDTO> personajeDTOList;
 }
